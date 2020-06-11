@@ -3,5 +3,5 @@
 # 使用方法
 
 1. 将两个 shell script 放到`/jffs/scripts/`中并设置权限 755  
-2. `ln -s /jffs/scripts/generatecnwhitelist.sh dnsmasq.postconf`以便每次 dnsmasq 启动时把从 fancyss 获取的 cdn.txt 转换成 dnsmasq 的配置文件  
+2. `ln -s /jffs/scripts/generatecnwhitelist.sh /jffs/scripts/dnsmasq.postconf`以便每次 dnsmasq 启动时把从 fancyss 获取的 cdn.txt 转换成 dnsmasq 的配置文件  
 3. 在`/jffs/scripts/init-start`中添加`echo 0 0 * * * /jffs/scripts/updatecnwhitelist.sh >> /var/spool/cron/crontabs/admin`以便在每次开机后自动添加定时更新到 crontab
