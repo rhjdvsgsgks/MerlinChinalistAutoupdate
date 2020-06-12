@@ -3,12 +3,12 @@ remotemd5=$(wget https://raw.githubusercontent.com/hq450/fancyss/master/rules/ve
 update(){
 if [ $remotemd5 != $(md5sum /koolshare/ss/rules/cdn.txt | awk '{print $1}') ]
 then
-	echo 'updating cnwhitelist'
+	logger -t updatecnwhitelist -p notice 'updating cnwhitelist'
 	wget https://raw.githubusercontent.com/hq450/fancyss/master/rules/cdn.txt -qO /koolshare/ss/rules/cdn.txt
-	echo 'download finished'
+	logger -t updatecnwhitelist -p notice 'download finished'
 	update
 else
-	echo 'no update required'
+	logger -t updatecnwhitelist -p notice 'no update required'
 	exit
 fi
 }
