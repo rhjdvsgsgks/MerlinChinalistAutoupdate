@@ -13,4 +13,4 @@ else
 fi
 }
 update
-service restart_dnsmasq
+/jffs/scripts/generatecnwhitelist.sh
