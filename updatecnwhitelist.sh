@@ -9,7 +9,6 @@ then
 	update
 else
 	logger -t updatecnwhitelist -p notice 'no update required'
-	exit
 fi
 }
 update
